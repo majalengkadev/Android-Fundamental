@@ -10,6 +10,11 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
+/**
+* Binding adapters are responsible for making the appropriate framework calls to set values
+* https://developer.android.com/topic/libraries/data-binding/binding-adapters
+**/
+
 @BindingAdapter("isGone")
 fun bindIsGone(view: View, isGone: Boolean) {
     view.visibility = if (isGone) {
