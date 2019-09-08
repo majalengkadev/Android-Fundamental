@@ -1,10 +1,23 @@
 package id.majalengka.androidfundamental.di.component
 
+import android.app.Application
+import dagger.BindsInstance
 import dagger.Component
-import id.majalengka.androidfundamental.di.module.NetworkModule
-import id.majalengka.androidfundamental.di.subcomponent.PrayerTimesListComponent
+import dagger.android.AndroidInjectionModule
+import id.majalengka.androidfundamental.App
+import javax.inject.Singleton
 
-@Component(modules = [NetworkModule::class])
+@Singleton
+@Component(modules = [
+    AndroidInjectionModule::class])
 interface AppComponent {
-    fun prayerTimeListComponent(): PrayerTimesListComponent
+    @Component.Builder
+    interface Builder {
+        @BindsInstance
+        fun application(application: Application): Builder
+
+        fun build(): AppComponent
+    }
+
+    fun inject(application: App)
 }

@@ -1,6 +1,6 @@
 package id.majalengka.androidfundamental.model
 
-data class Results (
+data class ResultResponse (
         val title: String = "",
         val latitude: String = "",
         val longitude: String = "",
