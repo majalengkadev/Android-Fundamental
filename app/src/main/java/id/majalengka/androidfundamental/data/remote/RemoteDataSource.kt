@@ -1,3 +1,5 @@
 package id.majalengka.androidfundamental.data.remote
 
-class RemoteDataSource
+import id.majalengka.androidfundamental.network.Webservice
+
+class RemoteDataSource(webservice: Webservice)
