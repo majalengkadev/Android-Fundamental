@@ -1,4 +1,7 @@
 package id.majalengka.androidfundamental.ui
 
-class BaseActivity {
+import dagger.android.support.DaggerAppCompatActivity
+
+abstract class BaseActivity: DaggerAppCompatActivity(){
+
 }

@@ -5,9 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import id.majalengka.androidfundamental.viewmodel.MainViewModel
-import id.majalengka.androidfundamental.viewmodel.ViewModelFactory
 import id.majalengka.androidfundamental.databinding.FragmentPrayerTimeBinding
 import id.majalengka.androidfundamental.adapters.PrayerTimeAdapter
 import id.majalengka.androidfundamental.utils.Result
@@ -15,19 +16,21 @@ import javax.inject.Inject
 
 class PrayerTimeFragment : Fragment() {
 
-    @Inject lateinit var viewModelFactory: ViewModelFactory
-    private lateinit var viewModel: MainViewModel
-
-
+    @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
+    private val viewModel: MainViewModel by viewModels { viewModelFactory }
+    val adapter: PrayerTimeAdapter by lazy {
+        PrayerTimeAdapter()
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
         val binding = FragmentPrayerTimeBinding.inflate(inflater, container, false)
-        context ?: return binding.root
+                .apply {
+                    recyclerView.adapter = adapter
+                }
 
-        val adapter = PrayerTimeAdapter()
-        binding.recyclerView.adapter = adapter
+
 
         subscribeUi(binding, adapter)
 
