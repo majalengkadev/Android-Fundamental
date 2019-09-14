@@ -54,6 +54,8 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:$recyclerView"
     implementation 'androidx.core:core-ktx:1.1.0'
 
+    implementation "com.google.android.material:material:1.1.0-alpha10"
+
     // ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycleVersion"

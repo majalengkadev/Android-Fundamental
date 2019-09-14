@@ -6,6 +6,6 @@ import retrofit2.http.Path
 
 interface Webservice {
 
-    @GET("{location}.json")
+    @GET("{location}/weekly.json")
     suspend fun getPrayerTime(@Path("location") location: String ): ResultResponse
 }
