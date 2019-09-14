@@ -1,21 +1,23 @@
 package id.majalengka.androidfundamental
 
-import android.app.Application
-import id.majalengka.androidfundamental.di.component.AppComponent
+import dagger.android.AndroidInjector
+import dagger.android.DaggerApplication
 import id.majalengka.androidfundamental.di.component.DaggerAppComponent
 
-class App: Application() {
 
-    lateinit var appComponent: AppComponent
+class App: DaggerApplication() {
 
-    override fun onCreate() {
-        super.onCreate()
-        this.appComponent = this.initDagger()
+    private val appComponent by lazy {
+        DaggerAppComponent.builder()
+                .application(this)
+                .build()
     }
 
-    private fun initDagger() = DaggerAppComponent.builder()
-            .networkModule(NetworkModule())
-            .build()
+    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
+        appComponent.inject(this)
+        return appComponent
+    }
+
 
 
 }

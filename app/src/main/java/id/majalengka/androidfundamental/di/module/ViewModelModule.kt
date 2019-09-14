@@ -8,7 +8,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import id.majalengka.androidfundamental.viewmodel.MainViewModel
 import id.majalengka.androidfundamental.viewmodel.ViewModelFactory
-import id.majalengka.androidfundamental.viewmodel.ViewModelKey
+import id.majalengka.androidfundamental.di.scope.ViewModelKey
 
 @Suppress("unused")
 @Module

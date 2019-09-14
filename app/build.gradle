@@ -23,6 +23,10 @@ android {
             buildConfigField 'String', 'BASE_URL', '"https://muslimsalat.com/"'
             buildConfigField 'String', 'API_KEY', '"12ccc8ccb56a863a6da10bd7a61a462f"'
         }
+        debug {
+            buildConfigField 'String', 'BASE_URL', '"https://muslimsalat.com/"'
+            buildConfigField 'String', 'API_KEY', '"12ccc8ccb56a863a6da10bd7a61a462f"'
+        }
     }
     dataBinding {
         enabled = true
