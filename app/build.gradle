@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -52,8 +54,11 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:$recyclerView"
     implementation 'androidx.core:core-ktx:1.1.0'
 
+    implementation "com.google.android.material:material:1.1.0-alpha10"
+
     // ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycleVersion"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 

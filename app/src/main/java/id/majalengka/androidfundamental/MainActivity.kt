@@ -1,18 +1,23 @@
 package id.majalengka.androidfundamental
 
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupActionBarWithNavController
+import id.majalengka.androidfundamental.databinding.ActivityMainBinding
 import id.majalengka.androidfundamental.ui.BaseActivity
-import id.majalengka.androidfundamental.ui.PrayerTimeFragment
 
 class MainActivity : BaseActivity() {
 
-    private val prayerTimeFragment = PrayerTimeFragment()
+    private val navController by lazy { findNavController(R.id.nav_host) }
+
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        supportFragmentManager.beginTransaction()
-                .add(R.id.container, prayerTimeFragment)
-                .commit()
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        setSupportActionBar(binding.toolbar)
+        setupActionBarWithNavController(navController)
     }
 }
