@@ -28,7 +28,7 @@ class MainViewModel @Inject constructor(private val webservice: Webservice): Bas
     fun getData() {
         ///launch the coroutine scope
         coroutineScope.launch {
-            var result = webservice.getPrayerTime("Jakarta")
+            var result = webservice.getPrayerTime("Cirebon")
             try {
                 _data.value = result
 
