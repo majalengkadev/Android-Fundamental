@@ -73,6 +73,6 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideMuseumApiService(retrofit: Retrofit): Webservice =
+    fun provideApiService(retrofit: Retrofit): Webservice =
             retrofit.create(Webservice::class.java)
 }

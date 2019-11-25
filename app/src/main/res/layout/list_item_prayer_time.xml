@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_16"
             android:textColor="@color/colorPrimaryDark"
-            android:text="@{item.fajr}"
+            android:text="@{`Subuh : ` + item.fajr}"
             android:gravity="center"
             tools:text="Bismillah"/>
 
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_16"
             android:textColor="@color/colorPrimaryDark"
-            android:text="@{item.dhuhr}"
+            android:text="@{`Dzuhur : ` + item.dhuhr}"
             android:gravity="center"
             tools:text="Bismillah"/>
 
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_16"
             android:textColor="@color/colorPrimaryDark"
-            android:text="@{item.asr}"
+            android:text="@{`Ashar : ` + item.asr}"
             android:gravity="center"
             tools:text="Bismillah"/>
 
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_16"
             android:textColor="@color/colorPrimaryDark"
-            android:text="@{item.maghrib}"
+            android:text="@{`Maghrib : ` + item.maghrib}"
             android:gravity="center"
             tools:text="Bismillah"/>
 
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_16"
             android:textColor="@color/colorPrimaryDark"
-            android:text="@{item.isha}"
+            android:text="@{`Isya : ` + item.isha}"
             android:gravity="center"
             tools:text="Bismillah"/>
 
