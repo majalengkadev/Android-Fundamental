@@ -22,19 +22,24 @@ class MainViewModel @Inject constructor(private val webservice: Webservice): Bas
     private val _data = MutableLiveData<ResultResponse>()
     val data: LiveData<ResultResponse> get() = _data
 
+    private val _todayData = MutableLiveData<ResultResponse>()
+    val todayData: LiveData<ResultResponse> get() = _todayData
+
     init {
         getData()
     }
     fun getData() {
+        setLoading()
         ///launch the coroutine scope
         coroutineScope.launch {
-            var result = webservice.getPrayerTime("Cirebon")
+            var result = webservice.getWeeklyPrayerTime("Cirebon")
+            var todayResult = webservice.getTodayPrayerTime("Cirebon")
             try {
                 _data.value = result
-
-
+                _todayData.value = todayResult
+                finishLoading()
             } catch (e: Exception) {
-
+                finishLoading()
             }
         }
     }
